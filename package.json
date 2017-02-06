@@ -1,0 +1,17 @@
+{
+  "name": "npm-search",
+  "version": "1.0.0",
+  "description": "Search by scrapping npm website",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "0.22.0",
+    "express": "4.14.1",
+    "request": "2.79.0"
+  }
+}
