@@ -1,7 +1,11 @@
 var request = require('request');
 var express = require('express');
+var apicache = require('apicache');
 var cheerio = require('cheerio');
 var app = express();
+
+var cache = apicache.middleware;
+app.use(cache());
 
 app.get('/', function (req, res) {
   if(req.query.q){
@@ -50,6 +54,6 @@ function parseResults(body){
       version: version
     });
   });
-  
+
   return results;
 }
