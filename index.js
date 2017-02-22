@@ -21,7 +21,7 @@ app.get('/', function (req, res) {
     });
 
   }else{
-    res.send('Please specify a search string. e.g. q=react');
+    res.send('Please specify a search string. e.g. q=jquery');
   }
 })
 
@@ -49,8 +49,8 @@ function parseResults(body){
 
   $ = cheerio.load(body);
   $('li.package-details').each(function(){
-    var name = $(this).find('.name').text();
-    var author = $(this).find('.author').text();
+    var name = $(this).find('.packageName').text();
+    var author = $(this).find('.authorName').text();
     var description = $(this).find('.description').text();
     var version = $(this).find('.version').text();
     results.push({
