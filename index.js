@@ -31,8 +31,8 @@ app.get('/api/cache/index', function(req, res, next) {
 });
 
 // GET apicache index (for the curious)
-app.get('/api/cache/clear/:key?', function(req, res, next) {
-  res.send(200, ApiCache.clear(req.params.key || req.query.key));
+app.get('/api/cache/clear/', function(req, res, next) {
+  res.send(200, ApiCache.clear());
 });
 
 app.listen(process.env.PORT || 8080)
