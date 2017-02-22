@@ -23,7 +23,17 @@ app.get('/', function (req, res) {
   }else{
     res.send('Please specify a search string. e.g. q=jquery');
   }
-})
+});
+
+// GET apicache index (for the curious)
+app.get('/api/cache/index', function(req, res, next) {
+  res.send(apicache.getIndex());
+});
+
+// GET apicache index (for the curious)
+app.get('/api/cache/clear/:key?', function(req, res, next) {
+  res.send(200, ApiCache.clear(req.params.key || req.query.key));
+});
 
 app.listen(process.env.PORT || 8080)
 
